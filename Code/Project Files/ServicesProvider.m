@@ -1,14 +1,25 @@
-//
-//  ServicesProvider.m
-//  WindowsToUnixPathURL
-//
-//  Created by n.miari on 12/3/14.
-//  Copyright (c) 2014 Nicolás Miari. All rights reserved.
-//
+/*
+    ServicesProvider.m
+    PathConverter
+ 
+    Created by Nicolás Miari on 12/3/14.
+    Copyright (c) 2014 Nicolás Miari. All rights reserved.
+ 
+    See LICENSE.txt for this source file’s licensing information.
+ */
 
 #import "ServicesProvider.h"
 
+
+// .............................................................................
+
 @implementation ServicesProvider
+{
+    // (nothing yet)
+}
+
+
+// .............................................................................
 
 - (void) fixPath:(NSPasteboard*) pboard
         userData:(NSString*) userData
