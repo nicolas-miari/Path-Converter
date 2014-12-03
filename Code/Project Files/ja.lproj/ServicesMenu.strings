@@ -1,0 +1,8 @@
+/* 
+  ServicesMenu.strings
+  WindowsToUnixPathURL
+
+  Created by n.miari on 12/3/14.
+  Copyright (c) 2014 Nicolás Miari. All rights reserved.
+*/
+"default" = "パスをUnix形式に直す";
