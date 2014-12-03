@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1FB2D8BE1A2EC5F3008707A1 /* WindowsToUnixPathURL.service */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowsToUnixPathURL.service; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB2D8BE1A2EC5F3008707A1 /* PathConverter.service */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathConverter.service; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB2D8E11A2EC6AC008707A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Project Files/Info.plist"; sourceTree = "<group>"; };
 		1FB2D8E21A2EC6AC008707A1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Project Files/main.m"; sourceTree = "<group>"; };
 		1FB2D8E51A2EC795008707A1 /* ServicesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServicesProvider.h; path = "Project Files/ServicesProvider.h"; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		1FB2D8BF1A2EC5F3008707A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FB2D8BE1A2EC5F3008707A1 /* WindowsToUnixPathURL.service */,
+				1FB2D8BE1A2EC5F3008707A1 /* PathConverter.service */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,10 +56,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FB2D8BD1A2EC5F3008707A1 /* WindowsToUnixPathURL */ = {
+		1FB2D8BD1A2EC5F3008707A1 /* PathConverter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FB2D8DB1A2EC5F3008707A1 /* Build configuration list for PBXNativeTarget "WindowsToUnixPathURL" */;
+			buildConfigurationList = 1FB2D8DB1A2EC5F3008707A1 /* Build configuration list for PBXNativeTarget "PathConverter" */;
 			buildPhases = (
+				1FFE3CDE1A2EDAD600475D66 /* ShellScript */,
 				1FB2D8BA1A2EC5F3008707A1 /* Sources */,
 				1FB2D8BB1A2EC5F3008707A1 /* Frameworks */,
 				1FB2D8BC1A2EC5F3008707A1 /* Resources */,
@@ -68,9 +69,9 @@
 			);
 			dependencies = (
 			);
-			name = WindowsToUnixPathURL;
+			name = PathConverter;
 			productName = WindowsToUnixPathURL;
-			productReference = 1FB2D8BE1A2EC5F3008707A1 /* WindowsToUnixPathURL.service */;
+			productReference = 1FB2D8BE1A2EC5F3008707A1 /* PathConverter.service */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -87,7 +88,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1FB2D8B91A2EC5F3008707A1 /* Build configuration list for PBXProject "WindowsToUnixPathURL" */;
+			buildConfigurationList = 1FB2D8B91A2EC5F3008707A1 /* Build configuration list for PBXProject "PathConverter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -101,7 +102,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FB2D8BD1A2EC5F3008707A1 /* WindowsToUnixPathURL */,
+				1FB2D8BD1A2EC5F3008707A1 /* PathConverter */,
 			);
 		};
 /* End PBXProject section */
@@ -116,6 +117,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FFE3CDE1A2EDAD600475D66 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" != \"Debug\" ]; then\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%05u\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FB2D8BA1A2EC5F3008707A1 /* Sources */ = {
@@ -226,7 +243,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PathConverter;
 				WRAPPER_EXTENSION = service;
 			};
 			name = Debug;
@@ -238,7 +255,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PathConverter;
 				WRAPPER_EXTENSION = service;
 			};
 			name = Release;
@@ -246,7 +263,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FB2D8B91A2EC5F3008707A1 /* Build configuration list for PBXProject "WindowsToUnixPathURL" */ = {
+		1FB2D8B91A2EC5F3008707A1 /* Build configuration list for PBXProject "PathConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FB2D8D91A2EC5F3008707A1 /* Debug */,
@@ -255,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FB2D8DB1A2EC5F3008707A1 /* Build configuration list for PBXNativeTarget "WindowsToUnixPathURL" */ = {
+		1FB2D8DB1A2EC5F3008707A1 /* Build configuration list for PBXNativeTarget "PathConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FB2D8DC1A2EC5F3008707A1 /* Debug */,
