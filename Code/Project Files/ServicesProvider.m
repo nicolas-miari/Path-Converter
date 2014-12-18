@@ -69,6 +69,11 @@
         return;
     }
     
+    // Prepend protocol (e.g., smb://, cifs://)
+    if ([userData isEqualToString:@"smb"] || [userData isEqualToString:@"cifs"]) {
+        newString = [userData stringByAppendingFormat:@":%@", newString];
+    }
+    
     // Write the modified string onto the pasteboard.
     [pboard clearContents];
     [pboard writeObjects:[NSArray arrayWithObject:newString]];
