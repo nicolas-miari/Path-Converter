@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>00002</string>
+	<string>00003</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
@@ -36,7 +36,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Convert File Path to Mac Format</string>
+				<string>Convert File Path to Mac Format (smb:)</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>fixPath</string>
@@ -52,6 +52,31 @@
 			</array>
 			<key>NSServiceDescription</key>
 			<string>Converts Windows-style file paths (backslash) to Unix-style (forward slash).</string>
+			<key>NSUserData</key>
+			<string>smb</string>
+		</dict>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Convert File Path to Mac Format (cifs:)</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>fixPath</string>
+			<key>NSPortName</key>
+			<string>PathConverter</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSServiceDescription</key>
+			<string>Converts Windows-style file paths (backslash) to Unix-style (forward slash).</string>
+			<key>NSUserData</key>
+			<string>cifs</string>
 		</dict>
 	</array>
 </dict>
