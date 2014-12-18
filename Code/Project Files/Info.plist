@@ -33,10 +33,35 @@
 	<key>NSServices</key>
 	<array>
 		<dict>
+			<key>NSUserData</key>
+			<string>smb</string>
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Convert File Path to Mac Format</string>
+				<string>Convert File Path to Mac Format (smb:)</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>fixPath</string>
+			<key>NSPortName</key>
+			<string>PathConverter</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>NSServiceDescription</key>
+			<string>Converts Windows-style file paths (backslash) to Unix-style (forward slash).</string>
+		</dict>
+		<dict>
+			<key>NSUserData</key>
+			<string>cifs</string>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Convert File Path to Mac Format (cifs:)</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>fixPath</string>
