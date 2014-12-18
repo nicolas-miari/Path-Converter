@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>00002</string>
+	<string>00003</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
@@ -33,8 +33,6 @@
 	<key>NSServices</key>
 	<array>
 		<dict>
-			<key>NSUserData</key>
-			<string>smb</string>
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
@@ -54,10 +52,10 @@
 			</array>
 			<key>NSServiceDescription</key>
 			<string>Converts Windows-style file paths (backslash) to Unix-style (forward slash).</string>
+			<key>NSUserData</key>
+			<string>smb</string>
 		</dict>
 		<dict>
-			<key>NSUserData</key>
-			<string>cifs</string>
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
@@ -77,6 +75,8 @@
 			</array>
 			<key>NSServiceDescription</key>
 			<string>Converts Windows-style file paths (backslash) to Unix-style (forward slash).</string>
+			<key>NSUserData</key>
+			<string>cifs</string>
 		</dict>
 	</array>
 </dict>
